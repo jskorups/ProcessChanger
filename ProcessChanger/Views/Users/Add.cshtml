@@ -1,0 +1,21 @@
+﻿@model ProcessChanger.Models.AddUserModel
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(x => x.Firstname, "Imie")
+    @Html.TextBoxFor(x => x.Firstname)
+    @Html.ValidationMessageFor(x => x.Firstname)
+    @Html.LabelFor(x => x.Lastname, "Nazwisko")
+    @Html.TextBoxFor(x => x.Lastname)
+    @Html.ValidationMessageFor(x => x.Lastname)
+    @Html.LabelFor(x => x.Email, "email")
+    @Html.TextBoxFor(x => x.Email)
+    @Html.ValidationMessageFor(x => x.Email)
+    @Html.LabelFor(x => x.Email, "wydział")
+    @Html.EnumDropDownListFor(x => x.Department)
+
+
+    <input type="submit" />
+    <input type="reset" />
+}
+@*@Html.BeginForm();*@

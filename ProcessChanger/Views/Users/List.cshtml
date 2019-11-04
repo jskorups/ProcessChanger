@@ -1,0 +1,21 @@
+﻿@model IEnumerable<ProcessChanger.Models.UserListItemModel>
+
+<h3>Users lista</h3>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th width="30%">Fullname</th>
+            <th width="70%">Department</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+        <tr>
+            <td>@item.FullName</td>
+            <td>@item.Department</td>
+        </tr>
+        }
+    </tbody>
+</table>

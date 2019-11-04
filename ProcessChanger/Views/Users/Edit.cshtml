@@ -1,0 +1,23 @@
+﻿@model ProcessChanger.Models.EditUserModel
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(x => x.ID)
+
+    @Html.LabelFor(x => x.FullName, "Imie i Nazwisko")
+    @Html.DisplayFor(x => x.FullName)
+
+    @Html.LabelFor(x => x.Email, "email")
+    @Html.EditorFor(x => x.Email)
+
+
+    @Html.LabelFor(x => x.Department, "wydzial")
+    @Html.EnumDropDownListFor(x => x.Department)
+
+
+    @Html.LabelFor(x => x.IsActive, "Czy aktywny?")
+    @Html.CheckBoxFor(x => x.IsActive)
+
+
+    <input type="submit" />
+    <input type="reset" />
+}
