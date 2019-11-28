@@ -7,9 +7,9 @@ using System.Web;
 
 namespace ProcessChanger.Infrastructure.Validators
 {
-    public class EmailDomainValidationAttributem : ValidationAttribute
+    public class EmailDomainValidationAttribute : ValidationAttribute
     {
-        public EmailDomainValidationAttributem()
+        public EmailDomainValidationAttribute()
         {
             this.ErrorMessage = "You must use correct domain adress";
         }
