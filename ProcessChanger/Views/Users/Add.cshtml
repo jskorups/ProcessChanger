@@ -2,20 +2,36 @@
 
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(x => x.Firstname, "Imie")
-    @Html.TextBoxFor(x => x.Firstname)
-    @Html.ValidationMessageFor(x => x.Firstname)
-    @Html.LabelFor(x => x.Lastname, "Nazwisko")
-    @Html.TextBoxFor(x => x.Lastname)
-    @Html.ValidationMessageFor(x => x.Lastname)
-    @Html.LabelFor(x => x.Email, "email")
-    @Html.TextBoxFor(x => x.Email)
-    @Html.ValidationMessageFor(x => x.Email)
-    @Html.LabelFor(x => x.Email, "wydział")
-    @Html.EnumDropDownListFor(x => x.Department)
+    <div class="form-group">
+        @Html.LabelFor(x => x.Firstname, "Imie")
+        @Html.TextBoxFor(x => x.Firstname, new { @class = "form-control"})
+        @Html.ValidationMessageFor(x => x.Firstname)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.Lastname, "Nazwisko")
+        @Html.TextBoxFor(x => x.Lastname, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Lastname)
+    </div>
+
+    <div class="form-group">
+
+        @Html.LabelFor(x => x.Email, "email")
+        @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Email)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.Department, "Department")
+        @Html.EnumDropDownListFor(x => x.Department, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Department)
+    </div>
 
 
-    <input type="submit" />
-    <input type="reset" />
+
+
+
+    <input type="submit" class="btn btn-primary"/>
+    <input type="reset" class="btn btn-defualt"/>
 }
 @*@Html.BeginForm();*@

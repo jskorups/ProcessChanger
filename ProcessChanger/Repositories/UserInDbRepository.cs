@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using ProcessChanger.Entities;
 using ProcessChanger.Models;
 
 namespace ProcessChanger.Repositories
@@ -27,6 +28,9 @@ namespace ProcessChanger.Repositories
             return new EditUserModel();
         }
 
-
+        public IEnumerable<User> GetUsers(Func<User, bool> whereClause)
+        {
+            return null;
+        }
     }
 }

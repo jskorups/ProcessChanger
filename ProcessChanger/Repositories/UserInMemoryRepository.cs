@@ -9,7 +9,7 @@ namespace ProcessChanger.Repositories
 {
     public class UserInMemoryRepository  : IUserRepository
     {
-        private IList<User> _users = new List<User>()
+        private static IList<User> _users = new List<User>()
         {
             new User
             {
@@ -55,6 +55,7 @@ namespace ProcessChanger.Repositories
                 {
                     Id = u.Id,
                     Department = u.Department,
+                    email = u.Email,
                     FullName = u.Firstname + " " + u.Lastname
                 });
         }
@@ -75,5 +76,11 @@ namespace ProcessChanger.Repositories
         {
             return _users.Count > 0 ? _users.Max(u => u.Id) + 1 : 1;
         }
+
+        public IEnumerable<User> GetUsers(Func<User, bool> predicate)
+        {
+            return _users.Where(predicate);
+        }
+
     }
 }

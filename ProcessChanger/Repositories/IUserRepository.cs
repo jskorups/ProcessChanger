@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using ProcessChanger.Entities;
 using ProcessChanger.Models;
 
 namespace ProcessChanger.Repositories
@@ -9,5 +11,7 @@ namespace ProcessChanger.Repositories
          void Update(EditUserModel model);
          IEnumerable<UserListItemModel> GetAllActiveUsers();
          EditUserModel FindUserById(long Id);
+
+        IEnumerable<User> GetUsers(Func<User, bool> whereClause);
     }
 }

@@ -1,11 +1,13 @@
 ﻿using System.Web.Mvc;
+using ProcessChanger.Infrastructure;
 using ProcessChanger.Models;
 using ProcessChanger.Repositories;
 
 namespace ProcessChanger.Controllers
 {
-    public class UsersController : Controller
+    public class UsersController : BaseController
     {
+        
         private IUserRepository _repository;
 
         public UsersController(IUserRepository repository)
@@ -17,7 +19,7 @@ namespace ProcessChanger.Controllers
         [HttpPost]
         public ActionResult Add(AddUserModel model)
         {
-
+            Validate(model);
             if (ModelState.IsValid)
             {
                 _repository.Add(model);
@@ -30,7 +32,9 @@ namespace ProcessChanger.Controllers
 
         public ActionResult Add()
         {
-            var model = new AddUserModel();
+            
+
+            var model = new AddUserModel();        
             return View(model);
         }
 
@@ -38,8 +42,14 @@ namespace ProcessChanger.Controllers
         [HttpPost]
         public ActionResult Edit (EditUserModel model)
         {
-            _repository.Update(model);
+            if (ModelState.IsValid)
+            {
+                _repository.Update(model); 
+                return RedirectToAction("List");
+              
+            }
             return View(model);
+
         }
 
         [HttpGet]

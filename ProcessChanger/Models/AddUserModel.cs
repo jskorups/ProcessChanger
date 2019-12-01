@@ -1,4 +1,5 @@
 ﻿using ProcessChanger.Entities;
+using ProcessChanger.Infrastructure.Validators;
 using System.ComponentModel.DataAnnotations;
 
 namespace ProcessChanger.Models
@@ -13,8 +14,9 @@ namespace ProcessChanger.Models
 
 
         [Required]
-        [EmailAddress]
+        [EmailDomainValidation]
         public string Email { get; set; }
+        [Required]
         public  DepartmentType Department { get; set; }
 
     }

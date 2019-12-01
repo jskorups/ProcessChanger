@@ -10,6 +10,7 @@ namespace ProcessChanger.Models
     {
         public long Id { get; set; }
         public string FullName { get; set; }
+        public string email { get; set; }
         public DepartmentType Department{ get; set; }
     }
 }

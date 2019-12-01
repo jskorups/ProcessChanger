@@ -1,10 +1,8 @@
 ﻿using Ninject;
 using ProcessChanger.Infrastructure;
+using ProcessChanger.Models;
 using ProcessChanger.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using ProcessChanger.Validators;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
@@ -23,6 +21,9 @@ namespace ProcessChanger
             IKernel kernel = new StandardKernel();
 
             kernel.Bind<IUserRepository>().To<UserInMemoryRepository>().InSingletonScope();
+
+            kernel.Bind<IModelValidator<AddUserModel>>().To<AddUserModelValidator>();
+            kernel.Bind<IModelValidator<EditUserModel>>().To<EditUserModelValidator>();
 
             ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory(kernel));
         }

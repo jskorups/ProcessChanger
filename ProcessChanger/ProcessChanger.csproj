@@ -134,12 +134,21 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Entities\ChangeAnalysis.cs" />
+    <Compile Include="Entities\Company.cs" />
+    <Compile Include="Entities\EconomicalAnalysis.cs" />
+    <Compile Include="Entities\EconomicalHeader.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\BaseController.cs" />
     <Compile Include="Infrastructure\NinjectControllerFactory.cs" />
     <Compile Include="Infrastructure\Validators\EmailDomainValidationAttribute.cs" />
+    <Compile Include="Infrastructure\Validators\FullNameValidationAttribute.cs" />
+    <Compile Include="Validators\EditUserModelValidator.cs" />
+    <Compile Include="Validators\IModelValidator.cs" />
+    <Compile Include="Validators\ValidationResult.cs" />
     <Compile Include="Models\AddUserModel.cs" />
     <Compile Include="Models\EditUserModel.cs" />
     <Compile Include="Models\UserListItemModel.cs" />
@@ -147,6 +156,7 @@
     <Compile Include="Repositories\IUserRepository.cs" />
     <Compile Include="Repositories\UserInDbRepository.cs" />
     <Compile Include="Repositories\UserInMemoryRepository.cs" />
+    <Compile Include="Validators\AddUserModelValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
