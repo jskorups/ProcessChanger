@@ -8,7 +8,7 @@ namespace ProcessChanger.Models
     {
         public long ID { get; set; }
         //?
-        [FullNameValidation]
+    
         [Required] //*
         public string FullName { get; set; }
         [EmailAddress] //*
@@ -18,7 +18,4 @@ namespace ProcessChanger.Models
         [Required] //*
         public bool IsActive { get; set; }
     }
-
-  
-
 }

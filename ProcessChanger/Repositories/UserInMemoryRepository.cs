@@ -82,5 +82,9 @@ namespace ProcessChanger.Repositories
             return _users.Where(predicate);
         }
 
+        public User GetEntity(long id)
+        {
+            return _users.SingleOrDefault(u => u.Id == id);
+        }
     }
 }

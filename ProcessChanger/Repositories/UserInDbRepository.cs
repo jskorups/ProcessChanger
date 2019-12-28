@@ -32,5 +32,10 @@ namespace ProcessChanger.Repositories
         {
             return null;
         }
+
+        public User GetEntity(long id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

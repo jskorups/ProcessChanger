@@ -132,20 +132,35 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ChangeAnalysisController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Entities\ChangeAnalysis.cs" />
     <Compile Include="Entities\Company.cs" />
+    <Compile Include="Entities\Customer.cs" />
     <Compile Include="Entities\EconomicalAnalysis.cs" />
     <Compile Include="Entities\EconomicalHeader.cs" />
+    <Compile Include="Entities\Product.cs" />
+    <Compile Include="Entities\Project.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\BaseController.cs" />
+    <Compile Include="Infrastructure\IEnumerableExtensions.cs" />
     <Compile Include="Infrastructure\NinjectControllerFactory.cs" />
     <Compile Include="Infrastructure\Validators\EmailDomainValidationAttribute.cs" />
-    <Compile Include="Infrastructure\Validators\FullNameValidationAttribute.cs" />
+    <Compile Include="Models\AddChangeAnalysisModel.cs" />
+    <Compile Include="Repositories\ChangeAnalysisRepository.cs" />
+    <Compile Include="Repositories\CompanyRepository.cs" />
+    <Compile Include="Repositories\CustomerRepository.cs" />
+    <Compile Include="Repositories\IChangeAnalysisRepository.cs" />
+    <Compile Include="Repositories\ICompanyRepository.cs" />
+    <Compile Include="Repositories\ICustomerRepository.cs" />
+    <Compile Include="Repositories\IProductRepository.cs" />
+    <Compile Include="Repositories\IProjectRepository.cs" />
+    <Compile Include="Repositories\ProductRepository.cs" />
+    <Compile Include="Repositories\ProjectRepository.cs" />
     <Compile Include="Validators\EditUserModelValidator.cs" />
     <Compile Include="Validators\IModelValidator.cs" />
     <Compile Include="Validators\ValidationResult.cs" />
@@ -197,6 +212,7 @@
     <Content Include="Views\Users\Add.cshtml" />
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\List.cshtml" />
+    <Content Include="Views\ChangeAnalysis\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

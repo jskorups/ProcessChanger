@@ -13,5 +13,7 @@ namespace ProcessChanger.Repositories
          EditUserModel FindUserById(long Id);
 
         IEnumerable<User> GetUsers(Func<User, bool> whereClause);
+
+        User GetEntity(long id);
     }
 }

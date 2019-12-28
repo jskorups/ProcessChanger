@@ -1,0 +1,62 @@
+﻿@model ProcessChanger.Models.AddChangeAnalysisModel
+
+
+@using (Html.BeginForm())
+{
+
+    <label>
+        <input type="radio" name="ModificationType" value="@ProcessChanger.Entities.ModificationType.Process" 
+               checked ="@(Model.ModificationType == ProcessChanger.Entities.ModificationType.Process)"/>
+        Process
+    </label>
+
+    <label>
+        <input type="radio" name="ModificationType" value="@ProcessChanger.Entities.ModificationType.Product" 
+                checked ="@(Model.ModificationType == ProcessChanger.Entities.ModificationType.Product)"/>
+        Product
+    </label>
+
+    <br />
+
+    <label>
+        <input type="radio" name="ModificationOrigin" value="@ProcessChanger.Entities.ModificationOrigin.External"
+               checked ="@(Model.ModificationOrigin== ProcessChanger.Entities.ModificationOrigin.External)"/>
+        External
+    </label>
+    <label>
+        <input type="radio" name="ModificationOrigin" value="@ProcessChanger.Entities.ModificationOrigin.Internal"
+                      checked ="@(Model.ModificationOrigin== ProcessChanger.Entities.ModificationOrigin.Internal)"/>
+        Internal
+    </label>
+
+    <label>Department</label>
+    @Html.EnumDropDownListFor(a => a.Department)
+
+    <label>Company</label>
+    @Html.DropDownListFor(x => x.CompanyId, Model.Companies)
+
+    @Html.TextAreaFor(a => a.ReasonForChange)
+
+    <label>Products</label>
+    @Html.DropDownListFor(x => x.ProductId, Model.Products)
+
+    <label>Process Type</label>
+    @Html.EnumDropDownListFor(a => a.ProcessType)
+
+    <label>Project</label>
+    @Html.DropDownListFor(x => x.ProjectId, Model.Projects)
+
+    <label>Customer</label>
+    @Html.DropDownListFor(x => x.CustomerId, Model.Customers)
+
+    <label>Change description</label>
+    @Html.TextAreaFor(a => a.ChangeDescription)
+
+    <label>Preliminary Analysis</label>
+    @Html.TextAreaFor(a => a.PreliminaryAnalysis)
+
+
+    <input type="submit" />
+    <input type="reset" />
+
+}

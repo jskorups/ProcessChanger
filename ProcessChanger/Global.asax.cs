@@ -19,13 +19,26 @@ namespace ProcessChanger
             BundleConfig.RegisterBundles(BundleTable.Bundles);
      
             IKernel kernel = new StandardKernel();
+            AddServices(kernel);
+ 
+            ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory(kernel));
+        }
 
+        private static IKernel CreateContainer()
+        {
+            return new StandardKernel();
+        }
+        private static void AddServices(IKernel kernel)
+        {
             kernel.Bind<IUserRepository>().To<UserInMemoryRepository>().InSingletonScope();
 
             kernel.Bind<IModelValidator<AddUserModel>>().To<AddUserModelValidator>();
             kernel.Bind<IModelValidator<EditUserModel>>().To<EditUserModelValidator>();
-
-            ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory(kernel));
+            kernel.Bind<IChangeAnalysisRepository>().To<ChangeAnalysisRepository>();
+            kernel.Bind<ICustomerRepository>().To<CustomerRepository>();
+            kernel.Bind<ICompanyRepository>().To<CompanyRepository>();
+            kernel.Bind<IProductRepository>().To<ProductRepository>();
+            kernel.Bind<IProjectRepository>().To<ProjectRepository>();
         }
     }
 }
